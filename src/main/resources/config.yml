@@ -16,7 +16,7 @@ settings-message:
     Line1: "&4&lPVP"
     Line2: "&cOFF"
   Wait:
-    Line1: "&7Odliczanie"
+    Line1: "&7Countdown"
     Line2: "&8%time%"
 
-  DisableCommand: "&cNie wolno jesteś podczas walki!"
+  DisableCommand: "&cYou are not allowed during the fight!"
