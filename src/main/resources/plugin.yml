@@ -1,0 +1,5 @@
+name: PvPSword-danielo535
+version: '${project.version}'
+main: pl.menel.pvpswordlobby.Main
+api-version: '1.13'
+author: ['danielo535']

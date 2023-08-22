@@ -1,0 +1,22 @@
+settings-pvp:
+  Time: 5
+
+settings-item:
+  Sword: "DIAMOND_SWORD"
+  Helmet: "DIAMOND_HELMET"
+  Chestplate: "DIAMOND_CHESTPLATE"
+  Leggings: "DIAMOND_LEGGINGS"
+  Boots: "DIAMOND_BOOTS"
+
+settings-message:
+  Enable-pvp:
+    Line1: "&4&lPVP"
+    Line2: "&aON"
+  Disable-pvp:
+    Line1: "&4&lPVP"
+    Line2: "&cOFF"
+  Wait:
+    Line1: "&7Odliczanie"
+    Line2: "&8%time%"
+
+  DisableCommand: "&cNie wolno jesteś podczas walki!"
