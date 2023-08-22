@@ -4,13 +4,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import pl.menel.pvpswordlobby.Main;
-import pl.menel.pvpswordlobby.menager.PvPMenager;
+import pl.menel.pvpswordlobby.manager.PvPManager;
 
 public class EntityDamageListener implements Listener {
-    private final PvPMenager pvPMenager;
-    public EntityDamageListener(PvPMenager pvPMenager) {
-        this.pvPMenager = pvPMenager;
+    private final PvPManager pvPManager;
+    public EntityDamageListener(PvPManager pvPManager) {
+        this.pvPManager = pvPManager;
     }
 
     @EventHandler
@@ -19,7 +18,7 @@ public class EntityDamageListener implements Listener {
             Player victim = (Player) event.getEntity();
             Player attacker = (Player) event.getDamager();
 
-            if (!pvPMenager.pvpList.contains(attacker) || !pvPMenager.pvpList.contains(victim)) {
+            if (!pvPManager.pvpList.contains(attacker) || !pvPManager.pvpList.contains(victim)) {
                 event.setCancelled(true);
             }
         }
