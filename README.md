@@ -26,3 +26,6 @@
 * Sound Effects: The plugin introduces additional auditory experiences. Sound has been added to scrolling through the hotbar, and a sound effect accompanies the countdown before combat.
 
 ----
+## Links
+* [SpigotMC](https://www.spigotmc.org/resources/pvp-sword-lobby.112219/)
+* [bStats](https://bstats.org/plugin/bukkit/PvP-Sword-Lobby/19612)
