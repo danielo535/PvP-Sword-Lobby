@@ -9,6 +9,8 @@ import pl.menel.pvpswordlobby.menager.PvPMenager;
 public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
+        int pluginId = 19612;
+        new Metrics(this, pluginId);
         PvPMenager pvPMenager = new PvPMenager(this);
         saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new PlayerItemChangeListener(this,pvPMenager), this);
