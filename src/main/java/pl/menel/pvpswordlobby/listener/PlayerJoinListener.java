@@ -6,13 +6,14 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import pl.menel.pvpswordlobby.manager.CombatManager;
 
 public class PlayerJoinListener implements Listener {
+    
     private final CombatManager combatManager;
+    
     public PlayerJoinListener(CombatManager combatManager) {
         this.combatManager = combatManager;
     }
     @EventHandler
-    public void onJoinServer(PlayerJoinEvent event) {
+    public void onPlayerJoin(PlayerJoinEvent event) {
         combatManager.onPlayerPvP(event.getPlayer(), false);
-
     }
 }
