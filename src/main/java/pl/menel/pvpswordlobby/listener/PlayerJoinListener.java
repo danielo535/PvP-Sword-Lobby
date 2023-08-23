@@ -13,6 +13,9 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onJoinServer(PlayerJoinEvent event) {
         combatManager.onPlayerPvP(event.getPlayer(), false);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 }
