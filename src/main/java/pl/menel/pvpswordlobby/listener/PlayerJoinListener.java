@@ -15,5 +15,5 @@ public class PlayerJoinListener implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         combatManager.onPlayerPvP(event.getPlayer(), false);
-    }
+    } 
 }
