@@ -8,15 +8,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 import pl.menel.pvpswordlobby.Main;
-import pl.menel.pvpswordlobby.manager.PvPManager;
+import pl.menel.pvpswordlobby.manager.CombatManager;
 
 public class PlayerItemChangeListener implements Listener {
 
     private final Main plugin;
-    private final PvPManager pvPManager;
-    public PlayerItemChangeListener(Main plugin, PvPManager pvPManager) {
+    private final CombatManager combatManager;
+    public PlayerItemChangeListener(Main plugin, CombatManager combatManager) {
         this.plugin = plugin;
-        this.pvPManager = pvPManager;
+        this.combatManager = combatManager;
     }
 
     @EventHandler
@@ -26,19 +26,19 @@ public class PlayerItemChangeListener implements Listener {
         Player player = event.getPlayer();
         player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_HAT, 0.5F, 1.5F);
 
-        if (pvPManager.pvpList.contains(player)) {
+        if (combatManager.pvpList.contains(player)) {
             if (newItem != null && newItem.getType() == Material.valueOf(plugin.getConfig().getString("settings-item.Sword"))) {
-                pvPManager.onPvpCancel(player);
+                combatManager.onPvpCancel(player);
             } else {
-                if (pvPManager.pvpEnabledStatus.get(player)) {
-                    pvPManager.onPvpDisable(player);
+                if (combatManager.pvpEnabledStatus.get(player)) {
+                    combatManager.onPvpDisable(player);
                 }
             }
-        } else if (pvPManager.countdownTasks.containsKey(player))  {
-            pvPManager.onPvpCancel(player);
-            pvPManager.countdownTasks.remove(player);
+        } else if (combatManager.countdownTasks.containsKey(player))  {
+            combatManager.onPvpCancel(player);
+            combatManager.countdownTasks.remove(player);
         } else if (newItem != null && newItem.getType() == Material.valueOf(plugin.getConfig().getString("settings-item.Sword"))){
-            pvPManager.onPvpEnable(player);
+            combatManager.onPvpEnable(player);
         }
     }
 }

@@ -3,15 +3,15 @@ package pl.menel.pvpswordlobby.listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-import pl.menel.pvpswordlobby.manager.PvPManager;
+import pl.menel.pvpswordlobby.manager.CombatManager;
 
 public class PlayerQuitListener implements Listener {
-    private final PvPManager pvPManager;
-    public PlayerQuitListener(PvPManager pvPManager) {
-        this.pvPManager = pvPManager;
+    private final CombatManager combatManager;
+    public PlayerQuitListener(CombatManager combatManager) {
+        this.combatManager = combatManager;
     }
     @EventHandler
     public void onLeaveServer(PlayerQuitEvent event) {
-        pvPManager.onPlayerPvP(event.getPlayer(), false);
+        combatManager.onPlayerPvP(event.getPlayer(), false);
     }
 }

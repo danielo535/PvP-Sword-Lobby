@@ -4,21 +4,21 @@ import me.kodysimpson.simpapi.colors.ColorTranslator;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.menel.pvpswordlobby.listener.PlayerItemChangeListener;
 import pl.menel.pvpswordlobby.listener.*;
-import pl.menel.pvpswordlobby.manager.PvPManager;
+import pl.menel.pvpswordlobby.manager.CombatManager;
 
 public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         new Metrics(this,19612);
-        PvPManager pvPManager = new PvPManager(this);
+        CombatManager combatManager = new CombatManager(this);
         saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(new PlayerItemChangeListener(this, pvPManager), this);
-        getServer().getPluginManager().registerEvents(new EntityDamageListener(pvPManager), this);
-        getServer().getPluginManager().registerEvents(new PlayerCommandListener(this, pvPManager), this);
-        getServer().getPluginManager().registerEvents(new PlayerDeathListener(pvPManager), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(pvPManager), this);
-        getServer().getPluginManager().registerEvents(new PlayerQuitListener(pvPManager), this);
-        getServer().getPluginManager().registerEvents(new PlayerMoveListener(pvPManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerItemChangeListener(this, combatManager), this);
+        getServer().getPluginManager().registerEvents(new EntityDamageListener(combatManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerCommandListener(this, combatManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(combatManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(combatManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuitListener(combatManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerMoveListener(combatManager), this);
         getLogger().info("----------------------");
         getLogger().info(" ");
         getLogger().info("✔ PvP-Sword-Lobby enabled...");
