@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 public class PvPManager {
-    private final Main plugin;
+    private final Main plugin; 
     public PvPManager(Main plugin) {
         this.plugin = plugin;
     }
