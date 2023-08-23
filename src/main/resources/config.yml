@@ -1,22 +1,32 @@
+# Settings for PvP mode
 settings-pvp:
+  # Countdown time in seconds before enabling PvP
   Time: 5
 
+# Item settings
 settings-item:
+  # The type of item that the player must hold to activate PvP
   Sword: "DIAMOND_SWORD"
+  # Armor configuration for the player after PvP is activated
   Helmet: "DIAMOND_HELMET"
   Chestplate: "DIAMOND_CHESTPLATE"
   Leggings: "DIAMOND_LEGGINGS"
   Boots: "DIAMOND_BOOTS"
 
+# Message configuration
 settings-message:
   Enable-pvp:
+    # Message displayed when PvP is enabled
     Line1: "&4&lPVP"
     Line2: "&aON"
   Disable-pvp:
+    # Message displayed when PvP is disabled
     Line1: "&4&lPVP"
     Line2: "&cOFF"
   Wait:
+    # Message displayed during the countdown
     Line1: "&7Countdown"
     Line2: "&8%time%"
 
-  DisableCommand: "&cYou are not allowed during the fight!"
+  # Message shown when a player attempts to use a command during combat
+  DisableCommand: "&cYou are not allowed to use commands during the fight!"
