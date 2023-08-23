@@ -19,7 +19,6 @@ public class EntityDamageListener implements Listener {
         if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
             Player victim = (Player) event.getEntity();
             Player attacker = (Player) event.getDamager();
-
             if (!combatManager.pvpList.contains(attacker) || !combatManager.pvpList.contains(victim)) {
                 event.setCancelled(true);
             }
