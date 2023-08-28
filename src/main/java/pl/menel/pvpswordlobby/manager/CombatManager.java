@@ -113,9 +113,15 @@ public class CombatManager {
             playerInventory.setBoots(diamondBoots);
 
             if (playerInventory.getItemInHand() != null) {
-                ItemMeta meta = playerInventory.getItemInHand().getItemMeta();
-                meta.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
-                playerInventory.getItemInHand().setItemMeta(meta);
+                ItemStack itemInHand = playerInventory.getItemInHand();
+
+                if (itemInHand.getItemMeta() != null) {
+                    if (!itemInHand.getItemMeta().getEnchants().containsKey(Enchantment.DAMAGE_ALL)) {
+                        ItemMeta meta = itemInHand.getItemMeta();
+                        meta.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
+                        itemInHand.setItemMeta(meta);
+                    }
+                }
             }
         } else {
             playerInventory.setHelmet(null);
