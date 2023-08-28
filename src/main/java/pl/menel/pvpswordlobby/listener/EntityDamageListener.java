@@ -7,10 +7,13 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import pl.menel.pvpswordlobby.manager.CombatManager;
 
 public class EntityDamageListener implements Listener {
+    
     private final CombatManager combatManager;
+    
     public EntityDamageListener(CombatManager combatManager) {
         this.combatManager = combatManager;
     }
+    
     @EventHandler
     private void onPvP(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
